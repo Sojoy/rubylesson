@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Thumbnail from './Thumbnail'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Button = styled.a`
     display: inline-block;
@@ -28,7 +29,7 @@ const Item = (props) => {
                         </div>
                         <div className="col-md-8">
                             <div className="pt-4 pb-4">
-                                <h4>{props.title}</h4>
+                                <Link to={`/episodes/${props.id}`} className="h4">{props.title}</Link>
                                 <p>{props.description}</p>
                                 <div className="cta-wrapper">
                                     <Button onClick={props.handleVideoChange} className="btn cta-btn"> Watch this video</Button>

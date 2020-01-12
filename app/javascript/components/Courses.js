@@ -51,9 +51,19 @@ class Courses extends Component {
     }
 
     render() {
+        const newEpisode = (
+            <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
+              <h4>
+                <Link to="/episode" className="btn btn-lg btn-dark">Add a video tutorial</Link>
+              </h4>
+            </div>
+        )
         return (
             <div>
                 <Navbar />
+                <div className="row">
+                    { newEpisode }
+                </div>
                 <Table handleVideoChange={this.handleVideoChange.bind(this)} course_modules={this.state.course_modules} />
             </div>
         )

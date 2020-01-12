@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Video from './Video'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Button = styled.a`
     display: inline-block;
@@ -27,7 +28,7 @@ const ActiveItem = (props) => {
                         <div className="col-md-10 offset-md-1">
                             <Video />
                             <div className="pt-4 pb-4">
-                                <h4>{props.title}</h4>
+                                <Link to={`/episodes/${props.id}`} className="h4">{props.title}</Link>
                                 <p>{props.description}</p>
                                 <div className="cta-wrapper">
                                     <Button onClick={props.handleVideoChange} className="btn cta-btn"> Watch this video</Button>

@@ -5,7 +5,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import Home from '../components/Home/Home'
+//import CourseList from '../components/Courses/Courses'
+import App from '../components/App'
 
 const Hello = props => <div>Hello {props.name}!</div>;
 
@@ -20,7 +21,7 @@ Hello.propTypes = {
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
-    <Home />,
+    <App />, //<CourseList />
     document.body.appendChild(document.createElement("div"))
   );
 });

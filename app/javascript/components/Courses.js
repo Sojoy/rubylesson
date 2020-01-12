@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import Jumbotron from './Jumbotron'
-import Table from './Table/Table'
+import Table from './Assets/Table/Table'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Navbar from '../components/Assets/Navbar'
 
-class Home extends Component {
+class Courses extends Component {
     constructor(){
         super()
 
@@ -19,7 +20,7 @@ class Home extends Component {
     }
 
     componentDidMount(){
-        axios.get('/episodes.json')
+        axios.get('episodes.json')
         .then(data => {
             let res = []
             data.data.data.map( (data) => {
@@ -29,7 +30,8 @@ class Home extends Component {
             //debugger
         })
         .catch(data => {
-            debugger
+            console.log(data)
+            //debugger
         })
     }
     handleVideoChange(item, event){
@@ -51,11 +53,11 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Jumbotron />
+                <Navbar />
                 <Table handleVideoChange={this.handleVideoChange.bind(this)} course_modules={this.state.course_modules} />
             </div>
         )
     }
 }
 
-export default Home
+export default Courses

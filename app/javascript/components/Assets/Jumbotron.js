@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Section = styled.section`
     background-color: #d74234;
@@ -20,7 +21,7 @@ const Subhead = styled.p`
     font-weight:500;
 `
 
-const Button = styled.a`
+const Button = styled(Link)`
     display: inline-block;
     text-decoration: none;
     font-weight: bold;
@@ -45,7 +46,9 @@ const Jumbotron = () => {
                             <Header>React for Rails Developers</Header>
                             <Subhead>Supercharge your Ruby on Rails Apps with react.js</Subhead>
                             <div className="cta-wrapper">
-                                <Button className="btn fancy-btn">Get Started</Button>
+                                <Button to="/courses" className="btn btn-lg custom-button">
+                                    Get Started
+                                </Button>
                             </div>
                         </div>
                     </div>

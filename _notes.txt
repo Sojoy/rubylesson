@@ -1,0 +1,5 @@
+Build a Mini-Course website with React, Ruby on Rails, Webpacker and Bootstrap
+https://www.youtube.com/watch?v=B0SxxHAImhc
+
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend

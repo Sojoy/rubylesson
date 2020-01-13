@@ -9,6 +9,7 @@ class Episode extends React.Component {
         super(props)
         this.state = { episode: {} }
         this.addHtmlEntities = this.addHtmlEntities.bind(this)
+        this.deleteEpisode = this.deleteEpisode.bind(this)
     }
 
     componentDidMount() {
@@ -35,6 +36,29 @@ class Episode extends React.Component {
         return String(str)
           .replace(/&lt;/g, "<")
           .replace(/&gt;/g, ">");
+    }
+
+    deleteEpisode() {
+        const {
+          match: {
+            params: { id }
+          }
+        } = this.props;
+        const url = `/api/v1/destroy/${id}`;
+        const token = document.querySelector('meta[name="csrf-token"]').content;
+    
+        axios.delete(url, {
+          headers: {
+            "X-CSRF-Token": token,
+            "Content-Type": "application/json"
+          }
+        })
+          .then(response => {
+            if (response.status == "200"){
+                this.props.history.push("/courses")
+            }
+          })
+          .catch(error => console.log(error.message));
     }
 
     render() {
@@ -67,7 +91,7 @@ class Episode extends React.Component {
                         </div>
                     </div>
                     <div className="col-sm-12 col-lg-5">
-                        <button type="button" className="btn btn-danger">
+                        <button type="button" className="btn btn-danger" onClick={this.deleteEpisode}>
                         Delete Episode
                         </button>
                     </div>

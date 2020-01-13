@@ -107,7 +107,7 @@ class NewEpisode extends React.Component {
                   <button type="submit" className="btn btn-dark custom-button mt-3">
                     Create Episode
                   </button>
-                  <Link to="/courses" className="btn btn-link mt-3">
+                  <Link to="/episodes" className="btn btn-link mt-3">
                     Back to episodes
                   </Link>
                 </form>

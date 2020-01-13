@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Table from './Assets/Table/Table'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import Navbar from '../components/Assets/Navbar'
+import Navbar from './Assets/Navbar'
 
 class Courses extends Component {
     constructor(){

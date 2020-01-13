@@ -46,8 +46,8 @@ const Jumbotron = () => {
                             <Header>React for Rails Developers</Header>
                             <Subhead>Supercharge your Ruby on Rails Apps with react.js</Subhead>
                             <div className="cta-wrapper">
-                                <Button to="/courses" className="btn btn-lg custom-button">
-                                    Get Started
+                                <Button to="/episodes" className="btn btn-lg custom-button">
+                                    See available episodes
                                 </Button>
                             </div>
                         </div>

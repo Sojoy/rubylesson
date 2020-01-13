@@ -55,7 +55,7 @@ class Episode extends React.Component {
         })
           .then(response => {
             if (response.status == "200"){
-                this.props.history.push("/courses")
+                this.props.history.push("/episodes")
             }
           })
           .catch(error => console.log(error.message));
@@ -96,7 +96,7 @@ class Episode extends React.Component {
                         </button>
                     </div>
                     </div>
-                    <Link to="/courses" className="btn btn-link">
+                    <Link to="/episodes" className="btn btn-link">
                     Back to episodes
                     </Link>
                 </div>

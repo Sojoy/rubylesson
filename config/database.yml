@@ -32,7 +32,7 @@ development:
   username: react_app
 
   # The password associated with the postgres role (username).
-  password: password
+  password: <%= ENV["REACT_APP_DB_PASSWORD"] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -56,7 +56,7 @@ test:
   <<: *default
   database: rails_react_test
   username: react_app
-  password: password
+  password: <%= ENV["REACT_APP_DB_PASSWORD"] %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

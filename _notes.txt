@@ -3,3 +3,10 @@ https://www.youtube.com/watch?v=B0SxxHAImhc
 
 How to setup a ruby on rail project with React frontend
 https://www.digitalocean.com/community/tutorials/how-to-set-up-a-ruby-on-rails-project-with-a-react-frontend
+
+Getting Started with Rails
+https://guides.rubyonrails.org/getting_started.html
+
+
+Building the User model and session controller or Rails API authentication
+https://www.youtube.com/watch?v=FwfsMv2kSX4

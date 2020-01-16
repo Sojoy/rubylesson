@@ -52,7 +52,7 @@ class NewEpisode extends React.Component {
         })
         .then(response => {
             //debugger
-            this.props.history.push('/courses') 
+            this.props.history.push('/episodes') 
         })
         .catch(error => {
             //this.props.history.push(`/episode/${response.id}`)

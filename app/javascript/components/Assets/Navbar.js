@@ -1,7 +1,31 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 class Navbar extends Component {
+    constructor(props){
+        super()
+    }
+
+    Logout(event) {
+        event.preventDefault();
+        const serverUrl = "/logout"
+
+        const token = document.querySelector('meta[name="csrf-token"]').content;
+        Axios.delete(serverUrl)
+        .then(response => {
+            console.log(response)
+            if (response.status == 200) {
+                //console.log(response)
+                //this.props.history.push('/login')
+                alert("logged out")
+                //clear localstorage
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
 
     render() {
         return (
@@ -38,6 +62,11 @@ class Navbar extends Component {
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
+                    <ul class="navbar-nav mr-auto">
+                        <li className="nav-item"><Link className="nav-link" to="/register">Register</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/logout" onClick={this.Logout}>Logout</Link></li>
+                    </ul>
                 </div>
                 </nav>
         )

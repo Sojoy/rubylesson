@@ -5,7 +5,7 @@ import Navbar from './Assets/Navbar'
 
 class Login extends Component {
     constructor(props) {
-        super()
+        super(props)
 
         this.state = {
             email: "",
@@ -13,14 +13,14 @@ class Login extends Component {
         }
 
         this.onChange = this.onChange.bind(this)
-        this.onRegister = this.onRegister.bind(this)
+        this.onLogin = this.onLogin.bind(this)
     }
 
     onChange(event) {
         this.setState({ [event.target.name]: event.target.value })
     }
 
-    onRegister(event) {
+    onLogin(event) {
         event.preventDefault();
         const serverUrl = "/sessions"
         const { email, password } = this.state
@@ -64,7 +64,7 @@ class Login extends Component {
                 <h1 className="font-weight-normal mb-5">
                   Login
                 </h1>
-                <form onSubmit={this.onRegister}>
+                <form onSubmit={this.onLogin}>
                   <div className="form-group">
                     <label htmlFor="episodeTitle">Name</label>
                     <input
